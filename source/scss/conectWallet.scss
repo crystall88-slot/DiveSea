@@ -1,11 +1,11 @@
 .wallet {
   width: 1440px;
-  max-height: 924px;
+  max-height: 953px;
   margin: 0 auto;
   display: flex;
   &__connect {
     width: 777px;
-    height: 924px;
+    height: 953px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,14 +84,39 @@
   }
 }
 
+.wallet__slider-group {
+  width: 663px;
+  height: 953px;
+  background: #000000;
+  display: flex;
+  align-items: center;
+}
+
 .wallet__slider-container {
   max-width: 391px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.slider {
-  margin: 50px auto
+.wallet__slider {
+  display: flex;
+  flex-direction: column;
+  &-title {
+    width: 381.08px;
+    height: 114px;
+    color: #ffffff;
+    font-size: 47.34px;
+    font-weight: 700;
+    text-align: center;
+  }
+  &-text {
+    width: 381.08px;
+    height: 57px;
+    color: #6d6d6d;
+    font-size: 16.57px;
+    font-weight: 400;
+    text-align: center;
+  }
 }
 
 .wallet__slider-wrapper {
@@ -109,28 +134,40 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  width: 391px;
   height: 395px;
   font-size: 24px;
   color: #ffffff;
+  border-radius: 25px;
 }
 
-.wallet__slide:nth-child(4n + 1) {
-  background-color: #e08dac;
+.wallet__slide:nth-child(1) {
+  background: url(../img/nft_photo1.png) no-repeat center center;
+  background-size: cover;
 }
 
-.wallet__slide:nth-child(4n + 2) {
-  background-color: #45cb85;
+.wallet__slide:nth-child(2) {
+  background: url(../img/nft_photo2.png) no-repeat center center;
+  background-size: cover;
 }
 
-.wallet__slide:nth-child(4n + 3) {
-  background-color: #f79824;
+.wallet__slide:nth-child(3) {
+  background: url(../img/nft_photo3.png) no-repeat center center;
+  background-size: cover;
 }
 
-.wallet__slide:nth-child(4n + 4) {
-  background-color: #dc143c;
+.wallet__slide:nth-child(4) {
+  background: url(../img/nft_photo4.png) no-repeat center center;
+  background-size: cover;
+}
+
+.wallet__slide:nth-child(5) {
+  background: url(../img/nft_photo5.png) no-repeat center center;
+  background-size: cover;
 }
 
 .wallet__slider-bottom--panel {
+  margin: 0 auto;
   width: 182px;
   height: 75px;
   display: flex;
