@@ -73,14 +73,6 @@
     if (buttonBack) buttonBack.removeAttribute('disabled')
     if (buttonNext) buttonNext.removeAttribute('disabled')
 
-    if (withAnimation) {
-      clearTimeout(timer)
-      innerWrapper.style.transition = `transform ${ANIMATION_DELAY}ms`
-
-      timer = setTimeout(() => {
-        innerWrapper.style.transition = ''
-      }, ANIMATION_DELAY)
-    }
 
     if (index === 0 && buttonBack) {
       buttonBack.setAttribute('disabled', 'disabled')
@@ -99,13 +91,6 @@
 
     innerWrapperRight.style.transform = `translateX(${indexRight * slideWidthRight * -1}px)`
 
-    if (withAnimationRight) {
-      clearTimeout(timer)
-      innerWrapperRight.style.transition = `transform ${ANIMATION_DELAY}ms`
-      timer = setTimeout(() => {
-        innerWrapperRight.style.transition = ''
-      }, ANIMATION_DELAY)
-    }
 
     activeSlideInboxRight = indexRight
   }

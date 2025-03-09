@@ -35,14 +35,6 @@
     buttonBack.removeAttribute('disabled')
     buttonNext.removeAttribute('disabled')
 
-    if (withAnimation) {
-      clearTimeout(timer)
-      innerWrapper.style.transition = `transform ${ANIMATION_DELAY}ms`
-      timer = setTimeout = (() => {
-        innerWrapper.style.transition = ''
-
-      }, ANIMATION_DELAY)
-    }
 
     if ( index === 0 ) {
       buttonBack.setAttribute('disabled', 'disabled')

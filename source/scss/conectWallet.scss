@@ -9,6 +9,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    &-animation--first {
+      animation: itemInFirst 0.5s ease-out forwards;
+    }
+    &-animation--second {
+      animation: itemInSecond 0.7s ease-out forwards;
+    }
+    &-animation--third {
+      animation: itemInThird 0.9s ease-out forwards;
+    }
     &-return--link {
       margin-right: auto;
       padding: 45px 0 0 48px;
@@ -36,6 +45,9 @@
         padding: 20px 14.47px 20px 28.93px;
         border-radius: 9.64px;
         box-shadow: 5px 10px 50px 0px rgba(0, 0, 0, 0.1);
+
+
+
         &-link {
           display: flex;
           align-items: center;
@@ -199,3 +211,40 @@
   pointer-events: none;
   user-select: none;
 }
+
+
+@keyframes itemInFirst {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes itemInSecond {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes itemInThird {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
