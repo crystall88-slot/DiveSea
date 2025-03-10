@@ -658,3 +658,39 @@
 }
 
 
+.create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1245px;
+  height: 311px;
+  border-radius: 30px;
+  background-color: #000000;
+  &__title {
+    width: 476px;
+    height: 58px;
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+  &__text {
+    width: 264px;
+    height: 26px;
+    color: #d5d5d5;
+    font-size: 20.27px;
+    font-weight: 500;
+  }
+  &__list {
+    width: 396.62px;
+    height: 67.66px;
+    display: flex;
+    column-gap: 30;
+    &-item {
+      
+    }
+  }
+}
