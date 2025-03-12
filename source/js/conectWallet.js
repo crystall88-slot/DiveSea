@@ -5,13 +5,13 @@
   const slides = [...innerWrapper.querySelectorAll('.wallet__slide')]
   const buttonBack = slider.querySelector('.slider__button-back_js')
   const buttonNext = slider.querySelector('.slider__button-next_js')
-  const ANIMATION_DELAY = 500
+  // const ANIMATION_DELAY = 500
 
   const slidesCount = slides.length
 
   let slideWidth = wrapper.offsetWidth
   let activeSlideInbox = 0
-  let timer
+  // let timer
 
   initWidth()
   setActiveSlide(0)
