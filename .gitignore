@@ -1,5 +1,4 @@
-# OS generated files #
-######################
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -7,18 +6,27 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-*~
-.idea/
 
-# Frontend ignore files #
-#########################
+# Frontend ignore files
 npm-debug.log
 yarn-error.log
-node_modules
+node_modules/
 .tmp
 *.map
 
-# Project ignore files #
-########################
-build
+# Project ignore files
+build/
 build.zip
+
+# Django ignore files
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.sqlite3
+media/
+staticfiles/
+*.log
