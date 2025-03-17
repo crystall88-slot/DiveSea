@@ -1,0 +1,24 @@
+{
+  "material-icon-theme.files.associations": {
+      "**/templates/**/*.html": "django-html",
+      "*.html": "html"
+  },
+  "emmet.includeLanguages": {
+      "django-html": "html",
+      "javascript": "javascript"
+  },
+  "emmet.triggerExpansionOnTab": true, 
+  "html.suggest.html5": true,
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+  },
+  "[django-html]": {
+      "editor.quickSuggestions": {
+          "strings": true
+      }
+  }
+}

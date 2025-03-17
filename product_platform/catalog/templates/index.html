@@ -3,23 +3,28 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
     <meta name="format-detection" content="telephone=no">
 
     <title>DiveSea</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Discover, create, and sell NFTs on DiveSea, the largest NFT marketplace.">
+    <meta name="keywords" content="NFT, marketplace, digital art, blockchain, DiveSea">
 
     <script>
       var docElement = document.documentElement;
       docElement.className = docElement.className.replace(/\bno-js\b/, '') + ' js';
     </script>
 
-    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+    <!-- Подключение стилей через Django static -->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 <body>
-    {% include 'header.html' %}  <!-- Убрали "catalog/blocks/" -->
+    <!-- Вставка заголовка через include -->
+    {% include 'header.html' %}
 
     <main class="content">
         <section class="banner">
@@ -28,8 +33,8 @@
                 <h1 class="banner__about-title">Discover And Create NFTs</h1>
                 <p class="banner__about-text">Discover, Create and Sell NFTs On Our NFT Marketplace With Over Thousands Of NFTs And Get a <span class="banner__about-text--span">$20 bonus.</span></p>
                 <ul class="banner__about-list">
-                    <li class="banner__about-list--item"><a class="banner__about-list--item-link_explore" href="">Explore More</a></li>
-                    <li class="banner__about-list--item"><a class="banner__about-list--item-link_create" href="">create NFT</a></li>
+                    <li class="banner__about-list--item"><a class="banner__about-list--item-link_explore" href="#">Explore More</a></li>
+                    <li class="banner__about-list--item"><a class="banner__about-list--item-link_create" href="{% url 'create_nft' %}">Create NFT</a></li>
                 </ul>
                 <ul class="banner__about-list--our">
                     <li class="banner__about-list--our-item">
@@ -96,6 +101,31 @@
                 </div>
             </div>
         </section>
+        <section class="nft-gallery">
+          <h2 class="nft-gallery__title">Weekly - Top NFT</h2>
+          <div class="nft-gallery__grid">
+              {% for nft in nfts %}
+                  <div class="nft-card">
+                      <img src="{{ nft.image.url }}" alt="{{ nft.name }}" class="nft-card__image">
+                      <div class="nft-card__content">
+                          <h3 class="nft-card__title">{{ nft.name }}</h3>
+                          <p class="nft-card__description">{{ nft.description|truncatechars:100 }}</p>
+                          <p class="nft-card__price">{{ nft.price }} {{ nft.currency }}</p>
+                          <p class="nft-card__stock">In Stock: {{ nft.stock }}</p>
+                          {% if nft.put_on_sale %}
+                              <span class="nft-card__badge nft-card__badge--sale">On Sale</span>
+                          {% endif %}
+                          {% comment %} {% if nft.direct_sale %}
+                              <span class="nft-card__badge nft-card__badge--direct">Direct Sale</span>
+                          {% endif %} {% endcomment %}
+                      </div>
+                  </div>
+              {% empty %}
+                  <p class="nft-gallery__empty">No NFTs available yet.</p>
+              {% endfor %}
+          </div>
+      </section>
+
         <section class="community">
             <div class="community__orbit-outer">
                 <div class="community__orbit-outer--wrapper planet--1">
@@ -170,7 +200,7 @@
             </div>
             <div class="question__div">
                 <div class="question__div-wrapper">
-                    <span class="question__div-wrapper--question">How do I purchase an NFT on your platform ?</span>
+                    <span class="question__div-wrapper--question">How do I purchase an NFT on your platform?</span>
                     <button type="button" class="question__div-wrapper--button question_btn_js">+</button>
                 </div>
                 <span class="question__div-answer question__div-answer_js">Set up a wallet, fund it with crypto, connect to the platform, browse, and buy with a confirmed transaction. Check your platform’s guide for specifics.</span>
@@ -182,15 +212,20 @@
                 <h6 class="create__title">Create and Sell NFTs</h6>
                 <span class="create__text">World’s Largest NFT Place</span>
                 <ul class="create__list">
-                    <li class="create__list-item--first"><a href="" class="create__list-item--first-link">Explore More</a></li>
-                    <li class="create__list-item--second"><a href="" class="create__list-item--second-link">Sell Artwork</a></li>
+                    <li class="create__list-item--first"><a href="{% url 'create_nft' %}" class="create__list-item--first-link">Create NFT</a></li>
+                    <li class="create__list-item--second"><a href="#" class="create__list-item--second-link">Learn More</a></li>
                 </ul>
             </div>
             <img src="{% static 'img/create_img.png' %}" alt="create" class="create__img">
         </section>
     </main>
-    {% include 'footer.html' %}  <!-- Убрали "catalog/blocks/" -->
+
+    <!-- Вставка футера через include -->
+    {% include 'footer.html' %}
+
+    <!-- Подключение скриптов через Django static -->
     <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="{% static 'js/create_nft.js' %}" defer></script>
     <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>

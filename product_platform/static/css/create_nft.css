@@ -1,0 +1,229 @@
+.create__nft {
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create__nft-title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #141416;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.create__nft-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* Увеличенная ширина формы */
+  gap: 30px; /* Уменьшенное расстояние между колонками */
+}
+
+.create__nft-form--left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 600px; /* Увеличенная минимальная ширина левой части */
+}
+
+.create__nft-form--right {
+  flex: 0 0 468px; /* Ширина соответствует окну загрузки */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create__nft-form--group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+[class*="create__nft-form--group-label"] {
+  font-size: 16px;
+  font-weight: 500;
+  color: #141416;
+  width: 100%;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.create__nft-form--group-input__name,
+.create__nft-form--group-input__tegs,
+.create__nft-form--group-input__price,
+textarea,
+select {
+  padding: 14px; /* Увеличенные внутренние отступы */
+  font-size: 16px;
+  color: #676767;
+  border: 1px solid #ededed;
+  border-radius: 8px;
+  background: #f9f9f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px; /* Увеличенная высота текстового поля */
+}
+
+.create-nft__price-group {
+  display: flex;
+  gap: 15px; /* Увеличенное расстояние между выбором валюты и полем цены */
+}
+
+.create-nft__price-group select {
+  flex: 0 0 120px; /* Увеличенная ширина выпадающего списка для валюты */
+}
+
+.create-nft__price-group input {
+  flex: 1;
+}
+
+.create__nft-form--toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.create__nft-form--toggle span {
+  font-size: 14px;
+  color: #676767;
+}
+
+.create__nft-form--upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.create__nft-upload--box {
+  background: #f9f9f9;
+  border-radius: 30.74px; /* Заданный радиус скругления */
+  width: 468px; /* Заданная ширина */
+  height: 413px; /* Заданная высота */
+  padding: 20px; /* Уменьшенные внутренние отступы для заполнения изображения */
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Скрываем содержимое, выходящее за границы */
+}
+
+.create__nft-upload--icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.create__nft-upload--box p {
+  font-size: 14px;
+  color: #676767;
+  margin: 0;
+}
+
+.create__nft-form--group-input__upload {
+  display: none;
+}
+
+.create__nft-upload--btn {
+  background: #141416;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.create__nft-upload--btn:hover {
+  opacity: 0.8;
+}
+
+.create__nft-submit--btn {
+  background: #141416;
+  color: #ffffff;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  max-width: 1200px; /* Увеличенная ширина кнопки "Create" */
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+.create__nft-submit--btn:hover {
+  opacity: 0.8;
+}
+
+/* Стили для переключателя */
+.create__nft-form--group-label__switch-put,
+.create__nft-form--group-label__switch-direct {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.create__nft-form--group-input__put,
+.create__nft-form--group-input__direct {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.create__nft-form--group-input__put:checked + .slider,
+.create__nft-form--group-input__direct:checked + .slider {
+  background-color: #141416;
+}
+
+.create__nft-form--group-input__put:checked + .slider:before,
+.create__nft-form--group-input__direct:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Стили для превью изображения */
+.create__nft-upload--preview {
+  width: 100%; /* Растягиваем на всю ширину контейнера */
+  height: 100%; /* Растягиваем на всю высоту контейнера */
+  object-fit: cover; /* Сохраняем пропорции, обрезая лишнее */
+  border-radius: 30.74px; /* Соответствует радиусу контейнера */
+}

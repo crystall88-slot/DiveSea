@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DiveSea</title>
+    <meta name="description" content="Discover, create, and sell NFTs on DiveSea, the largest NFT marketplace.">
+    <meta name="keywords" content="NFT, marketplace, digital art, blockchain, DiveSea">
+
+    <script>
+      var docElement = document.documentElement;
+      docElement.className = docElement.className.replace(/\bno-js\b/, '') + ' js';
+    </script>
+
+    <!-- Подключение стилей через Django static -->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/create_nft.css' %}" rel="stylesheet">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+      <section class="create__nft">
+        <h1 class="create__nft-title">Create Your NFT</h1>
+        <form action="" class="create__nft-form" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="create__nft-form--left">
+            <div class="create__nft-form--group">
+              <label class="create__nft-form--group-label__name" for="name">Name</label>
+              <input class="create__nft-form--group-input__name" type="text" id="name" name="name" placeholder="Artwork Name" required>
+            </div>
+            <div class="create__nft-form--group">
+              <label class="create__nft-form--group-label__discription" for="description">Description</label>
+              <textarea id="description" name="description" placeholder="Enter Your Description" rows="4" required></textarea>
+            </div>
+            <div class="create__nft-form--group">
+              <label class="create__nft-form--group-label__royalty" for="royalty">Royalty</label>
+              <select name="royalty" id="royalty">
+                <option value="" disabled selected>Royalty</option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+                <option value="20">20%</option>
+              </select>
+            </div>
+            <div class="create__nft-form--group">
+              <label class="create__nft-form--group-label__tags" for="tags">Tags</label>
+              <input class="create__nft-form--group-input__tegs" type="text" id="tags" name="tags" placeholder="Beautiful, Castle, Monkeys ETC">
+            </div>
+            <div class="create__nft-form--group">
+              <label class="create__nft-form--group-label__price" for="price">Price</label>
+              <div class="create-nft__price-group">
+                <select id="currency" name="currency" required>
+                    <option value="ETH">ETH</option>
+                    <option value="BTC">BTC</option>
+                </select>
+                <input class="create__nft-form--group-input__price" type="number" id="price" name="price" placeholder="0.000007 ETC" step="0.000001" required>
+              </div>
+            </div>
+            <div class="create__nft-form--group">
+              <label class="create__nft-form--group-label__stock" for="stock">In Stock</label>
+              <select id="stock" name="stock" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="create__nft-form--group create__nft-form--toggle">
+              <label class="create__nft-form--group-label__sale" for="put_on_sale">Put On Sale</label>
+              <span>People Will Bids On Your NFT Project</span>
+              <label class="create__nft-form--group-label__switch-put">
+                  <input class="create__nft-form--group-input__put" type="checkbox" id="put_on_sale" name="put_on_sale">
+                  <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="create__nft-form--group create__nft-form--toggle">
+              <label class="create__nft-form--group-label__directsale" for="direct_sale">Direct Sale</label>
+              <span>No Bids - Only Direct Selling</span>
+              <label class="create__nft-form--group-label__switch-direct">
+                  <input class="create__nft-form--group-input__direct" type="checkbox" id="direct_sale" name="direct_sale">
+                  <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div class="create__nft-form--right">
+            <div class="create__nft-form--group create__nft-form--upload">
+              <label class="create__nft-form--group-label__upload create__nft-form--group-label__upload_js" for="image">Upload Image</label>
+              <div class="create__nft-upload--box create__nft-upload--box_js">
+                  <img src="{% static 'img/upload-icon.png' %}" alt="Upload Icon" class="create__nft-upload--icon">
+                  <p>PNG, GIF, WEBP, MP4 or MP3. Max 10Mb.</p>
+                  <input class="create__nft-form--group-input__upload" type="file" id="image" name="image" accept="image/*,video/mp4,audio/mp3" required>
+              </div>
+              <button type="button" class="create__nft-upload--btn">Upload</button>
+            </div>
+          </div>
+          <button type="submit" class="create__nft-submit--btn create__nft-submit--btn_js">Create</button>
+        </form>
+      </section>
+    </main>
+    {% include 'footer.html' %}
+    <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="{% static 'js/index.js' %}" defer></script>
+</body>
+</html>

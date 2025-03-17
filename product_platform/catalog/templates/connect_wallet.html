@@ -1,0 +1,117 @@
+{% load static %}
+{% load static sass_tags %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>DiveSea | Connect Wallet</title>
+    <meta name="description" content="Connect your wallet to DiveSea to start exploring and trading NFTs.">
+    <meta name="keywords" content="NFT, wallet, blockchain, DiveSea, Metamask, Trust Wallet">
+
+    <script>
+      var docElement = document.documentElement;
+      docElement.className = docElement.className.replace(/\bno-js\b/, '') + ' js';
+    </script>
+
+    <!-- Подключение стилей через Django static -->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/connectWallet.css' %}" rel="stylesheet">
+</head>
+<body>
+    <main class="content">
+        <section class="wallet">
+            <div class="wallet__connect">
+                <a class="wallet__connect-return--link" href="{% url "index.html" %}">
+                    <img class="wallet__connect-return--link-logo" src="{% static 'img/diveSeaLogo.png' %}" alt="logo">
+                </a>
+                <h1 class="wallet__connect-title">Choose Wallet</h1>
+                <ul class="wallet__connect-list">
+                    <li class="wallet__connect-list--item wallet__connect-animation--first">
+                        <a href="#" class="wallet__connect-list--item-link">
+                            <img class="wallet__connect-list--item-link_img" src="{% static 'img/metamask_img.png' %}" alt="Metamask">
+                            <span class="wallet__connect-list--item-link_span1">Metamask</span>
+                            <svg class="wallet__connect-list--item-link_vector" width="6.630859" height="10.849854" viewBox="0 0 6.63086 10.8499" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path id="Shape" d="M0.35 0.35C-0.12 0.82 -0.12 1.58 0.35 2.05L3.72 5.42L0.35 8.79C-0.12 9.26 -0.12 10.02 0.35 10.49C0.82 10.96 1.58 10.96 2.05 10.49L6.27 6.27C6.74 5.8 6.74 5.04 6.27 4.57L2.05 0.35C1.58 -0.12 0.82 -0.12 0.35 0.35Z" fill="#23262F" fill-opacity="1.000000" fill-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="wallet__connect-list--item wallet__connect-animation--second">
+                        <a href="#" class="wallet__connect-list--item-link">
+                            <img class="wallet__connect-list--item-link_img" src="{% static 'img/trust_img.png' %}" alt="Trust Wallet">
+                            <span class="wallet__connect-list--item-link_span1">Trust Wallet</span>
+                            <svg class="wallet__connect-list--item-link_vector" width="6.630859" height="10.849854" viewBox="0 0 6.63086 10.8499" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path id="Shape" d="M0.35 0.35C-0.12 0.82 -0.12 1.58 0.35 2.05L3.72 5.42L0.35 8.79C-0.12 9.26 -0.12 10.02 0.35 10.49C0.82 10.96 1.58 10.96 2.05 10.49L6.27 6.27C6.74 5.8 6.74 5.04 6.27 4.57L2.05 0.35C1.58 -0.12 0.82 -0.12 0.35 0.35Z" fill="#23262F" fill-opacity="1.000000" fill-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="wallet__connect-list--item wallet__connect-animation--third">
+                        <a href="#" class="wallet__connect-list--item-link">
+                            <img class="wallet__connect-list--item-link_img" src="{% static 'img/link_img.png' %}" alt="Ethereum">
+                            <span class="wallet__connect-list--item-link_span1">Enter Ethereum Address</span>
+                            <svg class="wallet__connect-list--item-link_vector" width="6.630859" height="10.849854" viewBox="0 0 6.63086 10.8499" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path id="Shape" d="M0.35 0.35C-0.12 0.82 -0.12 1.58 0.35 2.05L3.72 5.42L0.35 8.79C-0.12 9.26 -0.12 10.02 0.35 10.49C0.82 10.96 1.58 10.96 2.05 10.49L6.27 6.27C6.74 5.8 6.74 5.04 6.27 4.57L2.05 0.35C1.58 -0.12 0.82 -0.12 0.35 0.35Z" fill="#23262F" fill-opacity="1.000000" fill-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="wallet__connect-list--item-next">
+                        <a href="#" class="wallet__connect-list--item-next__link">Next</a>
+                    </li>
+                </ul>
+                <ul class="wallet__connect-footer">
+                    <li class="wallet__connect-footer--item">
+                        <a href="#" class="wallet__connect-footer--item-link">Privacy Policy</a>
+                    </li>
+                    <li class="wallet__connect-footer--item">
+                        <a href="#" class="wallet__connect-footer--item-link">Copyright 2022</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="wallet__slider-group">
+                <div class="wallet__slider-container">
+                    <div class="wallet__slider">
+                        <div class="wallet__slider-wrapper">
+                            <div class="wallet__slider-inner--wrapper">
+                                <div class="wallet__slide"></div>
+                                <div class="wallet__slide"></div>
+                                <div class="wallet__slide"></div>
+                                <div class="wallet__slide"></div>
+                                <div class="wallet__slide"></div>
+                            </div>
+                        </div>
+                        <h2 class="wallet__slider-title">Start Your Own NFT Gallery</h2>
+                        <p class="wallet__slider-text">DiveSea Is A Great Platform For Discover Largest NFTs And Other Stuff !!</p>
+                        <div class="wallet__slider-bottom--panel">
+                            <button class="slider__button slider__button-back_js">
+                                <svg width="16.569336" height="10.651367" viewBox="0 0 16.5693 10.6514" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path id="vector (Stroke)" d="M5.81 0.31C5.33 -0.13 4.58 -0.1 4.13 0.38L0.31 4.52C-0.11 4.97 -0.11 5.67 0.31 6.12L4.13 10.27C4.58 10.75 5.33 10.78 5.81 10.33C6.29 9.89 6.32 9.14 5.87 8.66L3.88 6.5L15.38 6.5C16.03 6.5 16.56 5.97 16.56 5.32C16.56 4.67 16.03 4.14 15.38 4.14L3.88 4.14L5.87 1.98C6.32 1.5 6.29 0.75 5.81 0.31Z" fill="#23262F" fill-opacity="1.000000" fill-rule="evenodd"/>
+                                </svg>
+                            </button>
+                            <span class="wallet__slider-bottom--panel-vector">
+                                <svg width="2.367188" height="28.403564" viewBox="0 0 2.36719 28.4036" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect id="Frame 14" rx="0.591743" width="1.183486" height="27.220182" transform="translate(0.591743 0.591743)" fill="#E6E8EC" fill-opacity="1.000000"/>
+                                </svg>
+                            </span>
+                            <button class="slider__button slider__button-next_js">
+                                <svg width="16.569336" height="10.651367" viewBox="0 0 16.5693 10.6514" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path id="vector (Stroke)" d="M10.75 0.31C11.23 -0.13 11.98 -0.1 12.43 0.38L16.25 4.52C16.67 4.97 16.67 5.67 16.25 6.12L12.43 10.27C11.98 10.75 11.23 10.78 10.75 10.33C10.27 9.89 10.24 9.14 10.69 8.66L12.68 6.5L1.18 6.5C0.53 6.5 0 5.97 0 5.32C0 4.67 0.53 4.14 1.18 4.14L12.68 4.14L10.69 1.98C10.24 1.5 10.27 0.75 10.75 0.31Z" fill="#23262F" fill-opacity="1.000000" fill-rule="evenodd"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подключение скриптов через Django static -->
+    <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/connectWallet.js' %}"></script>
+</body>
+</html>
